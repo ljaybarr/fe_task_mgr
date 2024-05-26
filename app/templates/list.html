@@ -27,7 +27,7 @@
                     <a href="{{ url_for('task_detail', pk=task['id']) }}" alt="continue reading">
                         <i class="bi bi-eye"></i>
                     </a>
-                    <a href="#" alt="edit">
+                    <a href="{{ url_for('edit_task', pk=task['id']) }}" alt="edit">
                         <i class="bi bi-pencil"></i>
                     </a>
                     <a href="#" alt="delete">

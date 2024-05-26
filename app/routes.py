@@ -33,6 +33,11 @@ def task_detail(pk):
     response = requests.get(url)
     if response.status_code == 200:
         single_task = response.json().get("task")
+        if single_task == {}:
+            return (
+                render_template("error.html", err_code=404),
+                404
+            )
         return render_template("detail.html", task=single_task)
     return (
         render_template("error.html", err_code=response.status_code),
